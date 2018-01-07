@@ -9,4 +9,4 @@ Data Structures:
 * Doubly Linked List
 
 Algorithms:
-* Mergesort
+* Merge Sort
