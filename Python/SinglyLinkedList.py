@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2018 Jared Gillespie
@@ -50,7 +50,7 @@ class SinglyLinkedList:
         """Instantiates a new instance of a SinglyLinkedList.
 
         :param elements: Optional. The elements initialize with.
-        :exception: ValueError is raised if 'elements' is not iterable.
+        :exception: TypeError is raised if 'elements' is not iterable.
 
         >>> my_list = SinglyLinkedList()
         >>> my_list
@@ -69,7 +69,7 @@ class SinglyLinkedList:
 
     def __add__(self, other):
         if not isinstance(other, SinglyLinkedList):
-            raise ValueError("other must be a SinglyLinkedList")
+            raise TypeError("other must be a SinglyLinkedList")
 
         if self._head is None:
             return other.copy()
@@ -152,6 +152,15 @@ class SinglyLinkedList:
 
         return self._iter_node.data
 
+    def __repr__(self):
+        s = []
+        node = self._head
+        while node is not None:
+            s.append(node.data)
+            node = node.next
+
+        return str(s)
+
     def __reversed__(self):
         """Returns a reversed copy of the list.
 
@@ -166,15 +175,6 @@ class SinglyLinkedList:
 
         for data in copy:
             yield data
-
-    def __repr__(self):
-        s = []
-        node = self._head
-        while node is not None:
-            s.append(node.data)
-            node = node.next
-
-        return str(s)
 
     @property
     def size(self) -> int:
@@ -243,7 +243,7 @@ class SinglyLinkedList:
         """Extends the list with the elements of another.
 
         :param other: A list or SinglyLinkedList to extend the list with.
-        :exception: ValueError is raised if 'other' is not iterable.
+        :exception: TypeError is raised if 'other' is not iterable.
 
         >>> my_list = SinglyLinkedList([1])
         >>> my_list.extend([2, 3, 4])
@@ -274,7 +274,7 @@ class SinglyLinkedList:
                     tail = tail.next
                     self._size += 1
         else:
-            raise ValueError("other must be iterable")
+            raise TypeError("other must be iterable")
 
     def get(self, index: int):
         """Gets the data at the specified index.
