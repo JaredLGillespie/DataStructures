@@ -2,11 +2,13 @@
 Data structures and algorithms implemented in various languages.
 
 Languages:
-* Python
+* Python3
 
 Data Structures:
-* Singly Linked List
 * Doubly Linked List
+* Queue
+* Singly Linked List
+* Stack
 
 Algorithms:
 * Merge Sort
