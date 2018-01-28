@@ -255,6 +255,12 @@ class DoublyLinkedList:
          >>> my_list.extend([2, 3, 4])
          >>> my_list
          [1, 2, 3, 4]
+
+         >>> my_list1 = DoublyLinkedList([1, 2, 3])
+         >>> my_list2 = DoublyLinkedList([4, 5])
+         >>> my_list1.extend(my_list2)
+         >>> my_list1
+         [1, 2, 3, 4, 5]
          """
         if isinstance(other, collections.Iterable):
             if self._head is None:

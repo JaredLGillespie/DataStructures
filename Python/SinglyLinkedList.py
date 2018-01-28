@@ -249,6 +249,12 @@ class SinglyLinkedList:
         >>> my_list.extend([2, 3, 4])
         >>> my_list
         [1, 2, 3, 4]
+
+         >>> my_list1 = SinglyLinkedList([1, 2, 3])
+         >>> my_list2 = SinglyLinkedList([4, 5])
+         >>> my_list1.extend(my_list2)
+         >>> my_list1
+         [1, 2, 3, 4, 5]
         """
         if isinstance(other, collections.Iterable):
             if self._head is None:
@@ -375,7 +381,10 @@ class SinglyLinkedList:
             raise IndexError("list is empty")
 
         head = self._head
-        self._head = head.next
+        if self._size == 1:
+            self._head = None
+        else:
+            self._head = head.next
 
         # Update iterable ptr
         if self._iter_node == head:
@@ -398,6 +407,13 @@ class SinglyLinkedList:
         if self._head is None:
             raise IndexError("list is empty")
 
+        if self._size == 1:
+            head = self._head
+            self._head = None
+            self._size -= 1
+            self._iter_node = None
+            return head.data
+
         next_node = self._head
         prev_node = None
 
@@ -406,6 +422,12 @@ class SinglyLinkedList:
             next_node = next_node.next
 
         prev_node.next = None
+
+        # Update iterable ptr
+        if self._iter_node == next_node:
+            self._iter_node = self._head
+
+        self._size -= 1
 
         return next_node.data
 
