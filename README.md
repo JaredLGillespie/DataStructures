@@ -6,6 +6,7 @@ Languages:
 
 Data Structures:
 * Doubly Linked List
+* Least Recently Used (LRU) Cache
 * Queue
 * Singly Linked List
 * Stack
