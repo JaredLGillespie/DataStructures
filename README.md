@@ -1,8 +1,5 @@
 # DataStructures
-Data structures and algorithms implemented in various languages.
-
-Languages:
-* Python3
+Data structures and algorithms implemented in Python3.
 
 Data Structures:
 * Doubly Linked List
