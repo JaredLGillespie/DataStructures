@@ -9,6 +9,7 @@ Data Structures:
 * Stack
 
 Algorithms:
+* Binary Search
 * Bubble Sort
 * Counting Sort
 * Insertion Sort
