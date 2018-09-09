@@ -9,4 +9,5 @@ Data Structures:
 * Stack
 
 Algorithms:
+* Bubble Sort
 * Merge Sort
