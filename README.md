@@ -10,6 +10,7 @@ Data Structures:
 
 Algorithms:
 * Bubble Sort
+* Counting Sort
 * Insertion Sort
 * Merge Sort
 * Quick Sort
